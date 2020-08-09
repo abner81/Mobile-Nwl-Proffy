@@ -90,13 +90,48 @@ const styles = StyleSheet.create({
   },
 
   password: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
     flex: 1,
   },
 
   iconPassword: {
     flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FAFAFC",
+    borderWidth: 1,
+    borderColor: "#E6E6F0",
+    paddingLeft: 24,
+    height: 64,
+    fontSize: 14,
+    lineHeight: 24,
+    color: "#9C98A6",
+    width: 331,
+    fontFamily: "Poppins_400Regular",
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+  },
+
+  iconRight: {
+    marginRight: 10,
+  },
+
+  button: {
+    width: 331,
+    height: 56,
+    backgroundColor: "#DCDCE5",
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "Archivo_700Bold",
+    fontSize: 16,
+    lineHeight: 26,
+    color: "#9C98A6",
+  },
+
+  textButton: {
+    fontFamily: "Archivo_700Bold",
+    fontSize: 16,
+    lineHeight: 26,
+    color: "#9C98A6",
   },
 });
 

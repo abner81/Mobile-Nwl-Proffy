@@ -8,16 +8,7 @@ import loginBackground from '../../assets/images/login-background.png'
 
 import styles from './styles'
 
-type FormData = {
-  firstName: string;
-  lastName: string;
-};
-
 export default function Login() {
-  const { control, handleSubmit, errors } = useForm<FormData>();
-  const onSubmit = handleSubmit(({ firstName, lastName }) => {
-    console.log(firstName, lastName);
-  });
 
   return (
     <View style={styles.container}>
@@ -37,43 +28,17 @@ export default function Login() {
         </View>
 
         <View style={styles.inputsGroup}>
-          <Controller
-            control={control}
-            render={({ onChange, onBlur, value }) => (
-              <TextInput
-                style={[styles.input, styles.email]}
-                onBlur={onBlur}
-                onChangeText={value => onChange(value)}
-                value={value}
-                placeholder='E-mail'
-              />
-            )}
-            name="firstName"
-            rules={{ required: true }}
-            defaultValue=""
-          />
-          {errors.firstName && <Text>This is required.</Text>}
+          <TextInput style={[styles.input, styles.email]} placeholder='E-mail'/>
 
           <View style={styles.iconPassword}>
-            <Controller
-              control={control}
-              render={({ onChange, onBlur, value }) => (
-                <TextInput
-                  style={[styles.input, styles.password]}
-                  onBlur={onBlur}
-                  onChangeText={value => onChange(value)}
-                  value={value}
-                  placeholder='Senha'
-                />
-              )}
-              name="lastName"
-              defaultValue=""
-            />
-          <Feather name="eye" size={24} />
+            <TextInput style={[styles.password]} placeholder='Senha' secureTextEntry={true} />
+            <Feather name="eye" size={24} style={styles.iconRight} />
           </View>
-
-          <Button title="Submit" onPress={handleSubmit(onSubmit)} />
         </View>
+
+        <RectButton style={styles.button}>
+          <Text style={styles.textButton}>Entrar</Text>
+        </RectButton>
       </View>
     </View>
   )
