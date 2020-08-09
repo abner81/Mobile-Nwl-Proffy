@@ -3,7 +3,7 @@ import { View, ScrollView, AsyncStorage  } from 'react-native'
 import { useFocusEffect } from '@react-navigation/native'
 
 import styles from './styles'
-//gg
+
 import PageHeader from '../../components/PageHeader'
 import TeacherItem, { Teacher } from '../../components/TeacherItem'
 
