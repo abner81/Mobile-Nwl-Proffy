@@ -28,9 +28,8 @@ const styles = StyleSheet.create({
   titleLogo: {
     fontFamily: "Archivo_700Bold",
     color: "#fff",
-    fontSize: 55,
-    justifyContent: "center",
-    alignItems: "center",
+    fontSize: 60,
+    textAlign: "left",
   },
 
   titleDescription: {
@@ -38,10 +37,11 @@ const styles = StyleSheet.create({
     color: "#D4C2FF",
     maxWidth: 150,
     fontSize: 16,
+    textAlign: "left",
   },
 
   downContent: {
-    flex: 0.5,
+    flex: 0.6,
     backgroundColor: "#F0F0F7",
     paddingHorizontal: 32,
   },
@@ -67,71 +67,35 @@ const styles = StyleSheet.create({
     color: "#8257E5",
   },
 
-  inputsGroup: {
-    paddingTop: 24,
-  },
-
-  input: {
-    width: 331,
-    height: 64,
-    backgroundColor: "#FAFAFC",
-    borderWidth: 1,
-    borderColor: "#E6E6F0",
-    paddingLeft: 24,
-    fontFamily: "Poppins_400Regular",
-    fontSize: 14,
-    lineHeight: 24,
-    color: "#9C98A6",
-  },
-
-  email: {
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-  },
-
-  password: {
-    flex: 1,
-  },
-
-  iconPassword: {
+  lembrarMe: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#FAFAFC",
-    borderWidth: 1,
-    borderColor: "#E6E6F0",
-    paddingLeft: 24,
-    height: 64,
-    fontSize: 14,
-    lineHeight: 24,
-    color: "#9C98A6",
-    width: 331,
-    fontFamily: "Poppins_400Regular",
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
+    justifyContent: "flex-start",
   },
 
-  iconRight: {
-    marginRight: 10,
-  },
-
-  button: {
-    width: 331,
-    height: 56,
-    backgroundColor: "#DCDCE5",
-    borderRadius: 8,
+  optionsLogin: {
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "Archivo_700Bold",
-    fontSize: 16,
-    lineHeight: 26,
+    justifyContent: "space-between",
+    paddingVertical: 24,
+  },
+
+  lembrarMeText: {
+    fontFamily: "Poppins_400Regular",
+    fontSize: 12,
     color: "#9C98A6",
   },
 
-  textButton: {
-    fontFamily: "Archivo_700Bold",
-    fontSize: 16,
-    lineHeight: 26,
+  senhaText: {
     color: "#9C98A6",
+    fontFamily: "Poppins_400Regular",
+    fontSize: 12,
+  },
+
+  logoIcon: {
+    width: 400,
+    height: 60,
+    resizeMode: "contain",
   },
 });
 

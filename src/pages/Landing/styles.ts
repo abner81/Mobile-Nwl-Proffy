@@ -3,31 +3,43 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#8257e5",
+    backgroundColor: "#F0F0F7",
     justifyContent: "center",
-    padding: 40,
+  },
+
+  topContent: {
+    flex: 0.5,
+    backgroundColor: "#8257e5",
+    paddingHorizontal: 24,
+    paddingTop: 40,
   },
 
   banner: {
     width: "100%",
     resizeMode: "contain",
+    marginTop: 100,
   },
 
   title: {
     fontFamily: "Poppins_400Regular",
-    color: "#fff",
     fontSize: 20,
     lineHeight: 30,
-    marginTop: 80,
+    color: "#6A6180",
   },
 
   titleBold: {
     fontFamily: "Poppins_600SemiBold",
   },
 
+  downContent: {
+    flex: 0.5,
+    paddingTop: 42,
+    paddingHorizontal: 32,
+  },
+
   buttonsContainer: {
     flexDirection: "row",
-    marginTop: 40,
+    marginTop: 20,
     justifyContent: "space-between",
   },
 
@@ -55,12 +67,12 @@ const styles = StyleSheet.create({
   },
 
   totalConnections: {
-    fontFamily: 'Poppins_400Regular',
-    color: '#d4c2ff',
+    fontFamily: "Poppins_400Regular",
+    color: '#9C98A6',
     fontSize: 12,
     lineHeight: 20,
     maxWidth: 140,
-    marginTop: 40,
+    paddingTop: 40,
   },
 });
 

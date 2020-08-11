@@ -1,14 +1,23 @@
-import React from 'react'
-import { View, ImageBackground, Text, Button } from 'react-native'
-import { TextInput, RectButton } from 'react-native-gesture-handler'
-import { useForm, Controller } from "react-hook-form";
-import { Feather } from '@expo/vector-icons';
+import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { View, ImageBackground, Text, KeyboardAvoidingView, CheckBox, Image } from 'react-native'
 
 import loginBackground from '../../assets/images/login-background.png'
 
 import styles from './styles'
+import ButtonLogin from '../../components/ButtonLogin'
+import LoginInput from '../../components/LoginInputs'
 
 export default function Login() {
+  
+
+  const [isSelected, setSelection] = useState(false);
+
+  const { navigate } = useNavigation()
+
+  const navigateNewAccount = () => {
+    navigate('CadastroOne')
+  }
 
   return (
     <View style={styles.container}>
@@ -21,25 +30,34 @@ export default function Login() {
         </ImageBackground>
       </View>
 
-      <View style={styles.downContent}>
+      <KeyboardAvoidingView style={styles.downContent} behavior="padding">
         <View style={styles.titleLoginContent}>
           <Text style={styles.titleLogin}>Fazer login</Text>
-          <Text style={styles.loginDescription}>Criar uma conta</Text>
+          <Text 
+            style={styles.loginDescription}
+            onPress={navigateNewAccount}>Criar uma conta</Text>
         </View>
 
-        <View style={styles.inputsGroup}>
-          <TextInput style={[styles.input, styles.email]} placeholder='E-mail'/>
+        <LoginInput 
+          placeholderTop='E-mail' 
+          placeholderDown='Senha' 
+          password={true}
+        />
 
-          <View style={styles.iconPassword}>
-            <TextInput style={[styles.password]} placeholder='Senha' secureTextEntry={true} />
-            <Feather name="eye" size={24} style={styles.iconRight} />
+        <View style={styles.optionsLogin}>
+          <View style={styles.lembrarMe}>
+            <CheckBox 
+              value={isSelected}
+              onValueChange={setSelection}
+              />
+            <Text style={styles.lembrarMeText}>Lembrar-me</Text>
           </View>
+
+          <Text style={styles.senhaText} onPress={() => console.log('weueueu')}>Esqueci minha senha</Text>
         </View>
 
-        <RectButton style={styles.button}>
-          <Text style={styles.textButton}>Entrar</Text>
-        </RectButton>
-      </View>
+        <ButtonLogin title='Entrar' />
+      </KeyboardAvoidingView>
     </View>
   )
 }

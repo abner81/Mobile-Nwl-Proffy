@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Image, Text, TouchableOpacity } from 'react-native'
+import { View, Image, Text } from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
@@ -34,12 +34,15 @@ function Landing() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.topContent}>
       <Image source={landingImg} style={styles.banner} />
+      </View>
 
-      <Text style={styles.title} >
-        Seja bem-vindo, {'\n'}
-        <Text style={styles.titleBold} >O que deseja fazer?</Text>
-      </Text>
+      <View style={styles.downContent}>
+        <Text style={styles.title} >
+          Seja bem-vindo, {'\n'}
+          <Text style={styles.titleBold} >O que deseja fazer?</Text>
+        </Text>
 
       <View style={styles.buttonsContainer}>
         <RectButton 
@@ -59,9 +62,10 @@ function Landing() {
         </RectButton>
       </View>
 
-      <Text style={styles.totalConnections}>Total de {totalConnections} conexões já realizadas {' '}
-        <Image source={heartIcon}/>
-      </Text>
+        <Text style={styles.totalConnections}>Total de {totalConnections} conexões já realizadas {' '}
+          <Image source={heartIcon} />
+        </Text>
+      </View>
     </View>
   )
 }
