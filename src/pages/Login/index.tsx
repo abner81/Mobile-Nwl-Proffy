@@ -56,7 +56,7 @@ export default function Login() {
           <Text style={styles.senhaText} onPress={() => console.log('weueueu')}>Esqueci minha senha</Text>
         </View>
 
-        <ButtonLogin title='Entrar' />
+        <ButtonLogin title='Entrar' onPressProps={navigateNewAccount} />
       </KeyboardAvoidingView>
     </View>
   )

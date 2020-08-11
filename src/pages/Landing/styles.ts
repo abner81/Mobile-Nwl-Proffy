@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 
   downContent: {
     flex: 0.5,
-    paddingTop: 42,
+    marginTop: 42,
     paddingHorizontal: 32,
   },
 
