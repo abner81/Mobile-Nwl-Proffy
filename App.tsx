@@ -5,17 +5,19 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import { StatusBar } from 'expo-status-bar';
 import { AppLoading } from 'expo'
-import { Archivo_400Regular, Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo'
-import { Poppins_400Regular, Poppins_600SemiBold } from '@expo-google-fonts/poppins'
+import { Archivo_400Regular, Archivo_500Medium , Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo'
+import { Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold } from '@expo-google-fonts/poppins'
 
 import Routes from './src/routes';
-import AuthContext, { AuthProvider } from './src/contexts/auth';
+import { AuthProvider } from './src/contexts/auth';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     Archivo_400Regular,
+    Archivo_500Medium,
     Archivo_700Bold,
     Poppins_400Regular,
+    Poppins_500Medium,
     Poppins_600SemiBold,
   })
 
