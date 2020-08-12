@@ -10,10 +10,12 @@ import studyIcon from '../../assets/images/icons/study.png'
 import giveClassesIcon from '../../assets/images/icons/give-classes.png'
 import heartIcon from '../../assets/images/icons/heart.png'
 import api from '../../services/api'
+import { useAuth } from '../../contexts/auth'
 
 function Landing() {
   const { navigate } = useNavigation()
   const [totalConnections, setTotalConnections] = useState(0)
+  const { signOut, user } = useAuth()
 
   useEffect(() => {
     api.get('connections').then(res => {
@@ -25,7 +27,8 @@ function Landing() {
 
 
   const handleNavigateToGiveClassesPage = () => {
-    navigate('GiveClasses')
+   // navigate('GiveClasses')
+   signOut()
   }
 
   const handleNavigateToStudyPages = () => {
