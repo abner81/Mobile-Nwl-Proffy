@@ -7,6 +7,7 @@ import WelcomeTwo from "../pages/WelcomeTwo";
 import CadastroOne from "../pages/CadastroOne";
 import CadastroTwo from "../pages/CadastroTwo";
 import SucessAccount from "../pages/SucessAccount";
+import RememberPassword from "../pages/RememberPassword";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -17,6 +18,7 @@ const AuthRoutes: React.FC = () => (
     <Screen name='Login' component={Login} />
     <Screen name='CadastroOne' component={CadastroOne} />
     <Screen name='CadastroTwo' component={CadastroTwo} />
+    <Screen name='RememberPassword' component={RememberPassword} />
     <Screen name='SucessAccount' component={SucessAccount} />
   </Navigator>
 )

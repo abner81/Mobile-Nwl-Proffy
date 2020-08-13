@@ -11,28 +11,20 @@ import loginBackground from "../../assets/images/login-background.png";
 
 import styles from "./styles";
 import ButtonLogin from "../../components/ButtonLogin";
-import LoginInput from "../../components/LoginInputs";
-import { useAuth } from "../../contexts/auth";
 import { useNavigation } from "@react-navigation/native";
-import { BorderlessButton, RectButton, TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function Login() {
-  const { signed, signIn } = useAuth()
-  
-  const [isSelected, setSelection] = useState(false);
+export default function RememberPassword() {
+  const [handleEmailFocus, setHandleEmailFocus] = useState(false)
+  const [textTop, setTextTop] = useState('')
+
   const { navigate } = useNavigation();
 
   const handleNewAccountPage = () => {
     navigate('CadastroOne')
   }
 
-  const handleSignIn = async () => {
-    signIn()
-  };  
 
-  const handleRememberPasswordPage = () => {
-    navigate('RememberPassword')
-  }
 
   return (
     <View style={styles.container}>
@@ -55,11 +47,20 @@ export default function Login() {
           </TouchableOpacity >
         </View>
 
-        <LoginInput
-          placeholderTop="E-mail"
-          placeholderDown="Senha"
-          password={true}
-        />
+        <View>
+        <TextInput
+        style={[
+          styles.input,
+          styles.email,
+          handleEmailFocus ? styles.emailFocused : {},
+        ]}
+        placeholder='E-mail'
+        returnKeyType='send'
+        onChangeText={text => setTextTop(text) }
+        onFocus={() => setHandleEmailFocus(true)}
+        onEndEditing={() => setHandleEmailFocus(false)}
+      />
+        </View>
 
         <View style={styles.optionsLogin}>
           <View style={styles.lembrarMe}>
@@ -67,11 +68,9 @@ export default function Login() {
             <Text style={styles.lembrarMeText}>Lembrar-me</Text>
           </View>
 
-          <TouchableOpacity onPress={handleRememberPasswordPage}>
           <Text style={styles.senhaText}>
             Esqueci minha senha
           </Text>
-          </TouchableOpacity>
         </View>
 
         <ButtonLogin title="Entrar" onPressProps={handleSignIn} />

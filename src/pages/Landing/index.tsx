@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { View, Image, Text } from 'react-native'
-import { RectButton } from 'react-native-gesture-handler'
+import { RectButton, BorderlessButton } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 
+import { Ionicons } from '@expo/vector-icons'; 
 import landingImg from '../../assets/images/landing.png'
 import studyIcon from '../../assets/images/icons/study.png'
 import giveClassesIcon from '../../assets/images/icons/give-classes.png'
@@ -38,7 +39,20 @@ function Landing() {
   return (
     <View style={styles.container}>
       <View style={styles.topContent}>
-      <Image source={landingImg} style={styles.banner} />
+
+        <View style={styles.containerProfile}>
+          <View style={styles.profileTextImg}>
+          <Image 
+            source={{uri: 'https://avatars1.githubusercontent.com/u/54149914?s=460&u=e6a4306816a79fdcf1f4927c265ede6adcfb5a33&v=4'}}
+            style={styles.imgProfile}
+          />
+          <Text style={styles.profileName}>Abner Machado</Text>
+          </View>
+          <BorderlessButton style={styles.bottomProfileContainer}>
+            <Ionicons name="ios-power" size={24} color="#D4C2FF" />
+          </BorderlessButton>
+        </View>
+       <Image source={landingImg} style={styles.banner} />
       </View>
 
       <View style={styles.downContent}>
