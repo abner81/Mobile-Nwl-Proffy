@@ -14,20 +14,23 @@ import ButtonLogin from "../../components/ButtonLogin";
 import LoginInput from "../../components/LoginInputs";
 import { useAuth } from "../../contexts/auth";
 import { useNavigation } from "@react-navigation/native";
-import { BorderlessButton, RectButton, TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function Login() {
-  const { signed, signIn } = useAuth()
+  const { signIn, textTopAuth, textDownAuth } = useAuth()
   
-  const [isSelected, setSelection] = useState(false);
   const { navigate } = useNavigation();
+
+  const [isSelected, setSelection] = useState(false);
 
   const handleNewAccountPage = () => {
     navigate('CadastroOne')
   }
 
-  const handleSignIn = async () => {
+  const handleSignIn = () => {
     signIn()
+          console.log(textTopAuth);
+          console.log(textDownAuth);
   };  
 
   const handleRememberPasswordPage = () => {
@@ -51,8 +54,8 @@ export default function Login() {
         <View style={styles.titleLoginContent}>
           <Text style={styles.titleLogin}>Fazer login</Text>
           <TouchableOpacity onPress={handleNewAccountPage}>
-          <Text style={styles.loginDescription}>Criar uma conta</Text>
-          </TouchableOpacity >
+            <Text style={styles.loginDescription}>Criar uma conta</Text>
+          </TouchableOpacity>
         </View>
 
         <LoginInput
@@ -68,9 +71,7 @@ export default function Login() {
           </View>
 
           <TouchableOpacity onPress={handleRememberPasswordPage}>
-          <Text style={styles.senhaText}>
-            Esqueci minha senha
-          </Text>
+            <Text style={styles.senhaText}>Esqueci minha senha</Text>
           </TouchableOpacity>
         </View>
 

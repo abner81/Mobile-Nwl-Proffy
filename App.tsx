@@ -26,10 +26,10 @@ export default function App() {
   } else {
     return (
       <NavigationContainer>
-        <AuthProvider>
-          <Routes />
-          <StatusBar style="light" />
-        </AuthProvider>
+          <AuthProvider>
+            <Routes />
+            <StatusBar style="light" />
+          </AuthProvider>
       </NavigationContainer>
     );
   }

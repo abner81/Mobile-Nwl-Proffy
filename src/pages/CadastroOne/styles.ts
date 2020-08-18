@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 
   header: {
     flexDirection: "row",
-    paddingTop: 40,
+    marginTop: 40,
     alignItems: "center",
     justifyContent: "space-between",
   },
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 
   mainLogin: {
     flex: 0.6,
-    justifyContent: 'center',
+    marginTop: 60,
   },
 
   loginTitle: {

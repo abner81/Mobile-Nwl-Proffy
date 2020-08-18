@@ -9,13 +9,27 @@ import icons from '../../assets/images/Seção2.png'
 import styles from './styles'
 import LoginInput from '../../components/LoginInputs';
 import ButtonLogin from '../../components/ButtonLogin';
+
 import { useNavigation } from '@react-navigation/native';
+import { useAuth } from '../../contexts/auth';
 
 export default function CadastroTwo() {
+  const {createEmailAndPassword} = useAuth()
   const { navigate } = useNavigation()
 
-  const handleNewAccountSucess = () => {
-    navigate('SucessAccount')
+  const handleNewAccountSucess = async () => {
+    try {
+      const response = await createEmailAndPassword();
+
+      if (response !== "Sucess")
+        throw new Error(
+          "Não foi possível concluir o cadastro, tente novamente mais tarde."
+        );
+
+      navigate('SucessAccount')
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const handleGoBack = () => {

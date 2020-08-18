@@ -12,15 +12,15 @@ import RememberPassword from "../pages/RememberPassword";
 const { Navigator, Screen } = createStackNavigator();
 
 const AuthRoutes: React.FC = () => (
-  <Navigator headerMode="none">
-    <Screen name='WelcomeOne' component={WelcomeOne} /> 
-    <Screen name='WelcomeTwo' component={WelcomeTwo} /> 
-    <Screen name='Login' component={Login} />
-    <Screen name='CadastroOne' component={CadastroOne} />
-    <Screen name='CadastroTwo' component={CadastroTwo} />
-    <Screen name='RememberPassword' component={RememberPassword} />
-    <Screen name='SucessAccount' component={SucessAccount} />
-  </Navigator>
-)
+    <Navigator headerMode="none">
+      <Screen name="WelcomeOne" component={WelcomeOne} />
+      <Screen name="WelcomeTwo" component={WelcomeTwo} />
+      <Screen name="Login" component={Login} />
+      <Screen name="CadastroOne" component={CadastroOne} />
+      <Screen name="CadastroTwo" component={CadastroTwo} />
+      <Screen name="RememberPassword" component={RememberPassword} />
+      <Screen name="SucessAccount" component={SucessAccount} />
+    </Navigator>
+);
 
 export default AuthRoutes;

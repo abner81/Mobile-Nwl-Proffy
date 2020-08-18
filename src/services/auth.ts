@@ -1,8 +1,14 @@
+
+
 interface Response {
   token: string;
   user: {
     name: string;
     email: string;
+    avatar?: string
+    whatsapp?: string
+    bio?: string
+    id: number
   };
 }
 
@@ -14,6 +20,7 @@ export function sigIn(): Promise<Response> {
         user: {
           name: "Abner",
           email: "abner81@live.com",
+          id: 1,
         },
       });
     }, 2000);

@@ -7,16 +7,16 @@ import { View, ActivityIndicator } from 'react-native'
 
 const Routes: React.FC = () => {
   const { signed, loading } = useAuth()
-
-  /* if (loading) {
+  
+  if (loading) {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator size='large' color='purple'/>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size="large" color="purple" />
       </View>
-    )
-  }  else { */
-    return signed ? <AppRoutes /> : <AuthRoutes />;
+    );
+  }
 
+  return signed ? <AppRoutes /> : <AuthRoutes />;
   }
   
 
